@@ -66,7 +66,7 @@ label start:
 
     N "Hey hey hey, comment tu vas ?"
     J "Ouhla, ça va et toi ? Qu'est-ce qui t'arrives ?"
-    N "Ouais ça va, rien, je voulais juste t'appeler parce que je sors de chez le psy, j'avais rendez_vous cet après-midi..."
+    N "Ouais ça va. Hé bah en vrai rien, je voulais juste t'appeler parce que je sors de chez le psy, j'avais rendez_vous cet après-midi..."
     J "Déjà ? Ton dernier rendez-vous était il y a à peine quelques semaines, pourquoi voulait-il te revoir si vite ?"
     N "Honnêtement je n'ai pas compris pourquoi mais mes parents ont insistés pour que j'y aille alors que... merde... ça fait je ne sais combien de mois maintenant, il faut qu'ils passent à autre chose."
 
