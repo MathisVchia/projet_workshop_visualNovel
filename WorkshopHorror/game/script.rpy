@@ -43,17 +43,19 @@ label start:
     play music "audio/Music/Prologue1.mp3" loop
 
     J_think "Aujourd'hui, c'est le grand jour. Il ne me reste plus beaucoup de temps avant de devoir partir, et il ne faut pas que je gâche la soirée, sinon Kim ne me le pardonnera jamais."
-    J_think " Depuis le temps qu'il s'embête à tout bien organiser, la moindre petite faute de goût pourrait me coûter très cher. Kim et moi, on se connait depuis quelques années maintenant, je sais comment il réagira. Surtout depuis la dispute d’hier."
+    J_think " Depuis le temps qu'elle s'embête à tout bien organiser, la moindre petite faute de goût pourrait me coûter très cher."
+    J_think "On se connait déjà depuis plusieurs années, et je n'ai pas envie de savoir comment elle réagira... Surtout depuis la dispute d’hier."
 
 
 
     scene chambre_jason
 
-    J "Ce soir, je vais enfin revoir Bryan, mon meilleur ami. Ça fait plusieurs semaines que je ne l’ai pas revu. Je crois que Kim a décidé d’inviter Anna aussi. J’espère que tout va bien se passer entre eux."
-    J "Bon, je dois finir de me préparer avant d’arriver en retard. Je ne suis pas très convaincu de ma tenue mais tant pis, pas de temps à perdre."
+    J "Ca sera l'occasion de revoir Bryan. Ça fait plusieurs semaines que je ne l’ai pas revu. Je crois que Kim a décidé d’inviter Anna aussi. J’espère que tout va bien se passer malgré leurs différents."
+    J "Bon, je dois finir de me préparer avant d’arriver en retard. Je ne suis pas très convaincu de ma tenue mais tant pis, plus de temps à perdre."
     
-    E "*Bzzzz Bzzzz*"
-
+    
+    play sound "audio/Sounds/Phone Ringing.mp3" 
+    
     # son de vibration, clic sur le portable mis en évidence en arrière plan
 
     # ouverture interface portable OU fondu au noir avec scène scindé, chaque perso sur son téléphone
@@ -63,10 +65,12 @@ label start:
         linear 0.8 xalign 0.9
 
     N "Hey hey hey, comment tu vas ?"
-    J "Ouhla, ça va et toi ? Qu'est-ce qui t'arrives ?"
-    N "Ouais ça va, rien, je voulais juste t'appeler parce que je sors de chez le psy, j'avais rendez-vous cet après-midi..."
-    J "Déjà ? Ton dernier rendez-vous était il y a à peine quelques semaines, pourquoi voulait-il te revoir si vite ?"
-    N "Honnêtement je n'ai pas compris pourquoi mais mes parents ont insistés pour que j'y aille alors que... merde... ça fait je ne sais combien de mois maintenant, il faut qu'ils passent à autre chose."
+    J "Salut Nancy, ça va et toi ?"
+    N "Ouais ça va, je voulais juste t'appeler parce que je sors de chez le psy, j'avais rendez-vous cet après-midi..."
+    J "Déjà ? Ton dernier rendez-vous était il y a à peine deux semaines, pourquoi voulait-il te revoir si vite ?"
+    N "Honnêtement je n'ai pas compris pourquoi mais mes parents ont insisté pour que je le voie alors que..."
+    N "..."
+    N "Ca fait je ne sais combien de mois maintenant, il faut qu'ils passent à autre chose."
 
     menu:
         "Lui conseiller de continuer son traitement ou de l'arrêter ?"
@@ -77,7 +81,7 @@ label start:
 
     label continuer:
         J "Hé, s'ils sentent que tu as besoin de continuer ton traitement, il faut que tu leur fasse confiance Nancy..."
-        J "Ça ne va pas durer, tu vas y arriver. Dans le pire des cas, vas-y et raconte lui de la merde, ils seront contents."
+        J "Ça ne va pas durer, tu vas y arriver. Dans le pire des cas, vas-y et raconte n'importe quoi, ils seront contents."
         N "Tu crois ?"
         J "Fais moi confiance Nan'..."
         N "..."
@@ -85,22 +89,20 @@ label start:
         jump suite
         
     label arreter:
-        J "Après tu sais, j'ai l'impression que tu vas mieux quand même."
+        J "Après tu sais, j'ai vraiment l'impression que tu vas mieux."
         N "Tu trouves aussi ? J'avais peur de me tromper mais je me sens bien en ce moment."
-        J "Bah, tu es un peu plus souriante, tu as vraiment l'air d'être plus heureuse tu sais ?"
+        J "Bah, tu es plus souriante, tu as l'air de revivre."
         N "Merci ! Je suis contente que tu le remarques ! Tu es le premier à me le dire, ça fait du bien !"
         J "Tu vas continuer de suivre le traitement ?"
-        N "Pourquoi, tu crois que je devrais l'arrêter ?"
+        N "Pourquoi, tu crois que je devrais arrêter ?"
         J "Je ne sais pas, mais je te vois guérir, tu pourrais peut-être en parler à tes parents."
-
-
 
     label suite:
         N "... Hé dis-moi, ça te dit de sortir ce soir ? J'ai envie de prolonger l'euphorie pour la soirée avant que ça retombe..."
         J "Oh, euh, je ne vais pas pouvoir ce soir. Je dois aller chez Kim, on va enfin se voir avec les autres, depuis le temps."
         N "Les autres ?"
-        J "Ouais, Bryan et Anna, même si je ne comprends pas pourquoi on insiste à les faire venir ensemble vu l'ambiance qu'ils foutent les deux."
-        N "Ouais, non... si c'est pour continuer de me faire insulter en boucle, je vais éviter de venir ce soir..."
+        J "Ouais, Bryan et Anna, même si je ne comprends pas pourquoi on insiste à les faire venir ensemble vu l'ambiance que ça donne."
+        N "Ouais, non... si c'est pour être avec eux, je vais éviter de venir ce soir..."
 
         menu :
             "En parler":
@@ -113,35 +115,38 @@ label start:
                 jump passer
 
     label en_parler:
-        J "Attends, Kim et Anna continuent de te faire chier ? Putain, Kim m'avait promis de te laisser tranquille."
+        J "Attends, Kim et Anna continuent de te faire chier ? J'avais fait jurer à Kim de te laisser tranquille. Merde."
         N "Ouais, bah, comme quoi, on ne peut pas lui faire confiance..."
-        J "Putain... Bon, je vais essayer de lui en parler ce soir, je ne comprends pas ce qu'il se passe entre vous mais bordel ! Il faut que vous arriviez à vous parler un jour toutes les deux."
+        J "Bon, je vais essayer de lui en parler ce soir, je ne comprends pas ce qu'il se passe entre vous, mais il faut que vous arriviez à vous parler un jour toutes les trois."
         N "Je ne suis pas sûre que ça change grand chose, c'est trop tard maintenant."
-        J "Mais non, ça va aller tu verras. Laisse-moi faire, je vais lui en parler. Toi, ne pense plus à ça. Profite de ta soirée, tu le mérites."
+        J "Je vais gérer ça avec eux. Fais-moi confiance, et ne pense plus à ça. Profite de ta soirée, tu le mérites."
 
         jump suite2
 
     label desole:
-        J "Putain, je suis désolé que tu aies à vivre ça, elle m'avait promis d'arrêter pourtant…"
+        J "Je suis désolé que tu aies à vivre ça, Kim m'avait promis d'arrêter pourtant…"
         N "Mouais, bah si elle était du genre à respecter ses promesses, on le saurait…"
         J "Arrête Nancy..."
 
         jump suite2
 
     label passer:
-        J "Arrête, tu sais qu'elle dit ça pour rigoler..."
-        N "Pardon ? Tu ne l'a jamais vu quand elle est avec Anna, ce n'est pas juste pour rigoler Jason."
-        J "Non mais ce n'est pas ce que je voulais dire... Juste, ne prends pas à cœur tout ce qu'elle te dit, elle veut juste s'amuser avec toi, c'est toi qui empire la situation..."
+        J "Arrête, tu sais que Kim disait ça pour rigoler..."
+        N "Pardon ? Tu ne l'a jamais vue quand elle est avec Anna, ce n'est pas 'juste pour rigoler' Jason."
+        J "Non mais ce n'est pas ce que je voulais dire... Juste, ne prends pas à cœur tout ce qu'elle te dit, elle veut juste s'amuser avec toi, c'est toi qui empires la situation..."
         N "Tu sais quoi, va te faire foutre Jay ! Il faut que tu ouvres les yeux sur elle, ou elle va finir par t'avoir toi aussi."
-        J "Ouais, ouais... Je sais… Bon, tu sais quoi ?"
+        J "Ouais, ouais... Je sais..."
 
         $ relationJtoN -= 10
 
 
 
     label suite2:
-        J "Je vais devoir te laisser Nancy, sinon je vais être en retard. Ça m'a fait plaisir de t'avoir ce soir."
-        N "Ouais moi aussi... Bisous !"
+        J "Je vais devoir te laisser Nancy, sinon je vais être en retard. Ça m'a fait plaisir de t'entendre ce soir."
+        N "Ouais... Moi aussi..."
+        J "Bisous !"
+
+        play sound "audio/Sounds/Phone off.mp3"
 
         hide nancy_normal with dissolve
 
@@ -165,7 +170,7 @@ label start:
         #elif objet == 6 :
             # J_think "Ok, je pense que je suis bon pour ce soir !"
 
-        J_think "Il est déjà l'heure. Si je me dépêche assez, je n'arriverai pas en retard."
+        J_think "Oulah, il est déjà l'heure! Si je me dépêche assez, j'ai moyen d'arriver à temps'."
 
         scene fenetre_kim
         with dissolve
@@ -322,8 +327,10 @@ label start:
         label choix_Kim3:
             J "Tu trouves ? Moi je pense que je te dirai, toi. Entre nous tous, je suis sûr que t’es la plus fourbe, tu pourrais..."
 
+
         label suite6:
-            B "Les gars vous venez d’entendre ça ?"
+            play sound "audio/Sounds/Bruit Sourd.mp3"
+            B "Vous avez entendu ?"
             A "Quoi ?"
             B "Je ne sais pas, ça vient de l’étage… Kim, tu n’as pas de chat ?"
             K "Non, non… Arrête tu commences à me faire flipper..."
@@ -334,7 +341,7 @@ label start:
     
             menu:
                 "Croire Bryan":
-                    jump 
+                    jump suite6
 
 
 

@@ -2,36 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 313: end of line expected.
-(Perhaps you left out a " at the end of the first line.)
-    """
-            label choix_Bryan3:
-                J "Tu trouves ? Moi je pense que ça pourrait être Bryan, regarde-le c’est le seul qui pourrait avoir assez de force pour..."
-                     ^
-                jump suite6
-    
-            label choix_Anna3:
-                J "Tu trouves ? Moi je pense que ça pourrait être Anna. Regarde-la c’est la seule qui pourrait être assez intelligente pour..."
-                jump suite6
-    
-            label choix_Kim3:
-                J "Tu trouves ? Moi je pense que je te dirai, toi. Entre nous tous, je suis sûr que t’es la plus fourbe, tu pourrais..."
-    
-            label suite6:
-                B "Les gars vous venez d’entendre ça ?"
-                A "Quoi ?"
-                B "Je ne sais pas, ça vient de l’étage… Kim, tu n’as pas de chat ?"
-                K "Non, non… Arrête tu commences à me faire flipper..."
-                A "Non mais laisse tomber, regarde tout ce qu’il a bu, il est encore en train d’avoir des hallucinations."
-                B "Anna, arrête. Je suis sûr de ce que j’ai entendu..."
-                K "Mais c’était quoi, une voix, un bruit de pas..."
-                B "Je n’en sais rien..."
-        
-                menu:
-                    "Croire Bryan":
-                        jump 
-    
-            """
+File "game/script.rpy", line 339: expected 'label_name' not found.
+    jump 
+        ^
 
 Ren'Py Version: Ren'Py 8.0.3.22090809
-Wed Feb  8 16:26:27 2023
+Wed Feb  8 17:05:07 2023
