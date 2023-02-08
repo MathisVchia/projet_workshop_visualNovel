@@ -9,6 +9,7 @@ define J_think = Character(kind = J, what_italic = True, what_xalign = 0.5, what
 define J_shout = Character(kind = J, what_bold = True, what_size = 30) # Kind permet de copier un style de perso, perso qui crie
 define K = Character('Kim', color= "#ff00bf")
 define B = Character('Bryan', color= "#ff0000")
+define B_murmure = Character(kind = B, what_size = 10)
 define A = Character('Anna', color= "#2600ff")
 define N = Character('Nancy', color= "#f9fd15")
 define I = Character('Voix inconnue', color= "#48ff00")
@@ -45,10 +46,6 @@ label start:
 
 
     scene chambre_jason
-    show jason_normal:
-        xalign 0.2
-        yalign -0.5
-    with dissolve
 
     J "Ce soir, je vais enfin revoir Bryan, mon meilleur ami. Ça fait plusieurs semaines que je ne l’ai pas revu. Je crois que Kim a décidé d’inviter Anna aussi. J’espère que tout va bien se passer entre eux."
     J "Bon, je dois finir de me préparer avant d’arriver en retard. Je ne suis pas très convaincu de ma tenue mais tant pis, pas de temps à perdre."
@@ -60,9 +57,8 @@ label start:
     # ouverture interface portable OU fondu au noir avec scène scindé, chaque perso sur son téléphone
 
     show nancy_normal:
-        xalign 0.8
-        yalign -0.5
-    with dissolve
+        xalign 1.5 yalign -0.5
+        linear 0.8 xalign 0.9
 
     N "Hey hey hey, comment tu vas ?"
     J "Ouhla, ça va et toi ? Qu'est-ce qui t'arrives ?"
@@ -167,7 +163,7 @@ label start:
         #elif objet == 6 :
             # J_think "Ok, je pense que je suis bon pour ce soir !"
 
-        J_think "Il est déjà l'heure. Si je me déêche assez, je n'arriverai pas en retard."
+        J_think "Il est déjà l'heure. Si je me dépêche assez, je n'arriverai pas en retard."
 
         scene fenetre_kim
         with dissolve
@@ -217,8 +213,126 @@ label start:
 
 
         label suite3 :
-            ""
+            E "Dans le salon, Bryan et Anna sont tous les deux assis autour d'une  table où s'étaient déjà écoulées quelques bouteilles d'alcool."
+            B "Hééééé ! Mais c'est l'autre qui se décide enfin à arriver ! Viens dépêches-toi, je te sers un verre, il faut que tu me rattrapes !"
+            A "Tu vas vraiment continuer de boire toute la soirée ? T'es déjà explosé..."
+            K "Ouais, s'il te plait, calme toi un peu... Je n'ai pas envie de te récupérer en train de dormir sur le sol parce que tu t'es enquillé trop de verres d'alcool..."
+            B "Mais fermez là... Il va falloir qu'on apprenne à vous décoincer un peu, un jour... Pas vrai Jason ?"
+            B "Bon d'ailleurs, on était dans un débat, est-ce que tu penses que tu peux compter sur moi en cas de problèmes ou pas ?"
+            J "C'est quoi cette question ?"
+            A "On s'ennuyait en t'attendant du coup, Kim a décidé de nous lancer une série de questions pour savoir qui on préférait dans le groupe."
+            A "On en était à 'Sur qui tu peux compter ?' là."
+
+            menu:
+                "Sur qui compter ?"
+                "Bryan":
+                    jump choix_Bryan
+                "Anna":
+                    jump choix_Anna
+                "Kim":
+                    jump choix_Kim
         
+        label choix_Bryan:
+            J "Elle est nulle la question… Pour moi ça restera toujours Bryan. Il a beau être un peu con, il me colle au train depuis trop longtemps pour que je le laisse de côté."
+            B "Ah ! Vous voyez je vous l’avais dit ! Il fait passer la famille avant le coeur !"
+            K "Ouais, je vois ça… Je vois surtout qu’il va finir par dormir tout seul ce soir..."
+            jump suite4
+
+        label choix_Anna:
+            J "En vrai, si je dois choisir entre vous trois… je pense que je prendrai Anna."
+            B "Hé ! C’est quoi ce choix de merde là !"
+            J "Non mais juste réfléchis un peu : elle est la plus calme, elle est la plus réfléchie d’entre nous, si il y a bien une personne qui peut me sauver le cul sans trembler c’est bien elle !"
+            A "Et faut arrêter d’être jaloux Bryan. Elle baisse ta cote, assume-le, il préfère passer par d’autres gens que par toi."
+            jump suite4
+
+        label choix_Kim:
+            
+            J "Non mais ne me posez pas la question, je suis le seul en couple de nous trois. Si je dois appeler quelqu’un entre nous trois, c’est forcément Kim, je sais que je peux lui faire confiance."
+            A "Ah ! Tu vois Bryan, c’était évident. Son couple passera toujours devant toi, ne viens pas chialer."
+        
+        label suite4:
+            J "Forcément, elle était trop simple cette question... Vous en avez une autre ?"
+            K "On a eu plein tout à l’heure mais on est à court d'idées. Genre par exemple, si jamais on devait vivre pendant une apocalypse, tu penses que lequel d’entre nous finirai par mourir en premier ?"
+
+            menu:
+                "Qui mourrait en premier ?"
+
+                "Bryan":
+                    jump choix_Bryan2
+                "Anna":
+                    jump choix_Anna2
+                "Kim":
+                    jump choix_Kim2
+
+        label choix_Bryan2:
+            B "Arrête de me regarder en rigolant, tu sais très bien que je survivrai longtemps !"
+            J "Je suis désolé mais celui d’entre nous qui durera le moins longtemps, c’est toi."
+            B "Mais n’importe quoi ! Je suis le seul qui fait du sport entre nous, vous allez être tellement lent que vous allez crever en moins de deux."
+            B "Regarde Anna, même réfléchir ça lui prend du temps alors je te dis pas si il faut qu’elle court !"
+            A "Hé ! Va te faire ! Assume-le, t’es juste trop con tu tomberai dans tous les pièges"
+            B "Humpf… Je savais que ça allait être un jeu de merde de toute manière..."
+
+            jump suite5
+
+        label choix_Anna2:
+            J "Bah, écoute..."
+            A "Hé, arrête de me fixer comme ça, si il y en a bien une qui peut survivre c’est bien moi !"
+            J "Alors oui, mais tu n’es pas assez sportive. Si on se fait attaquer, je pense que celle qui a le moins de chance..."
+            A "Sans moi vous ne durerez pas plus de quelques jours."
+            B_murmure "Tu parles, sans toi putain on serait tranquille..."
+            A "Tu viens de dire quoi là ?"
+            K "Bryan laisse-la tranquille un peu, tu veux ?"
+
+            jump suite5
+        
+        label choix_Kim2:
+            J "Si il faut réfléchir en terme de défense, le premier qui se ferait viser en cas d’attaque, c’est Kim. T’as trop l’air sans défense..."
+            K "Pardon ? J’ai l’air faible ?"
+            J "Non, je dis pas ça. Mais comparé à Bryan, s’il y a bien quelqu’un qui peut paraître moins dangereux, c’est bien toi quoi..."
+            B_murmure "Ah c’est marrant, j’aurai plutôt dis Anna avec sa gueule de première de classe..."
+            A "Hé mais vas te faire foutre !"
+            K "Tu veux que je t’en colle une, voir si je suis si faible que ça ?"
+            J "Non mais le prends pas comme ça mon coeur, hé !"
+
+        label suite5:
+            J "Vas-y, je change de question avant que ça parte encore plus en couilles. Si l’un d’entre nous était un dangereux psychopathe, vous pensez que ça serait qui ?"
+            K "Elle est dure ta question..."
+
+            menu:
+                "Qui serait un psychopathe ?"
+                "Bryan":
+                    jump choix_Bryan3
+                "Anna":
+                    jump choix_Anna3
+                "Kim"
+                    jump choix_Kim3
+
+        label choix_Bryan3:
+            J "Tu trouves ? Moi je pense que ça pourrait être Bryan, regarde-le c’est le seul qui pourrait avoir assez de force pour..."
+            jump suite6
+
+        label choix_Anna3:
+            J "Tu trouves ? Moi je pense que ça pourrait être Anna. Regarde-la c’est la seule qui pourrait être assez intelligente pour..."
+            jump suite6
+
+        label choix_Kim3:
+            J "Tu trouves ? Moi je pense que je te dirai, toi. Entre nous tous, je suis sûr que t’es la plus fourbe, tu pourrais..."
+
+        label suite6:
+            B "Les gars vous venez d’entendre ça ?"
+            A "Quoi ?"
+            B "Je ne sais pas, ça vient de l’étage… Kim, tu n’as pas de chat ?"
+            K "Non, non… Arrête tu commences à me faire flipper..."
+            A "Non mais laisse tomber, regarde tout ce qu’il a bu, il est encore en train d’avoir des hallucinations."
+            B "Anna, arrête. Je suis sûr de ce que j’ai entendu..."
+            K "Mais c’était quoi, une voix, un bruit de pas..."
+            B "Je n’en sais rien..."
+    
+            menu:
+                "Croire Bryan":
+                    jump 
+
+
 
 
     return # Quitte la partie, partie terminée
