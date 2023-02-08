@@ -66,7 +66,7 @@ label start:
 
     N "Hey hey hey, comment tu vas ?"
     J "Ouhla, ça va et toi ? Qu'est-ce qui t'arrives ?"
-    N "Ouais ça va, rien, je voulais juste t'appeler parce que je sors de chez le psy, j'avais rendez_vous cet après-midi..."
+    N "Ouais ça va, rien, je voulais juste t'appeler parce que je sors de chez le psy, j'avais rendez-vous cet après-midi..."
     J "Déjà ? Ton dernier rendez-vous était il y a à peine quelques semaines, pourquoi voulait-il te revoir si vite ?"
     N "Honnêtement je n'ai pas compris pourquoi mais mes parents ont insistés pour que j'y aille alors que... merde... ça fait je ne sais combien de mois maintenant, il faut qu'ils passent à autre chose."
 
@@ -147,11 +147,77 @@ label start:
 
         hide nancy_normal with dissolve
 
-        ""
 
-        #$ testVar = True
+        J_think "Bon, il ne me reste plus beaucoup de temps. Kim m’a donné sa liste, si j’oublie le moindre objet, c’est un coup à ce que la soirée parte en vrille. J’espère juste que Bryan et Anna arriveront à se tenir."
+
+
+        # objet = 0
+        # Séquence point and clic chambre Jason
+
+        # De quoi j'ai besoin déjà ?
+        # Affichage liste d'objet
+
+        # Possibilité de partir à tout moment de la séquence, 3 répliques selon le nb d'objet pris
         
-        #if testVar == True:
+        #if objet == 0 :
+            # J_think "Hé merde, j'espère que Kim ne m'en voudras pas de enir les mains vides..."
+        #elif objet < 6 :
+            # J_think "Bon, au moins je n'arriverai pas les mains vides !"
+        
+        #elif objet == 6 :
+            # J_think "Ok, je pense que je suis bon pour ce soir !"
+
+        J_think "Il est déjà l'heure. Si je me déêche assez, je n'arriverai pas en retard."
+
+        scene fenetre_kim
+        with dissolve
+
+        E "Depuis l'extérieur, les feêntres de la maison de Kim semblent éclairées. au loin, quelques ombres dansent sur les murs du salon. La soirée a déjà commencé."
+        J_think "Merde, je suis le dernier. J'espère que je n'ai pas raté grand chose."
+
+    
+        E "Ding dong"
+
+        scene entree_kim
+        show kim_content:
+            yalign -0.5
+
+        K "Ah bah enfin te voilà ! T'es le dernier à arriver, on a cru que tu allais oublier la soirée !"
+        J "Désolé, j'ai pris trop de temps sur le chemin, le bus a fait un détour."
+        K "Ne t'en vais pas va ! Alors, tu as pensé à ce que tu devais ramener ?"
+
+        #if objet == 0 :
+            #jump mainsvides
+        #elif objet < 6 :
+            #jump moitie
+        #elif objet == 6 :
+            #jump tout
+
+        #label mainsvides : 
+            #J "Merde, je suis déoslé j'ai complètement oublié ce que tu voulais que je prenne..."
+            #K "Tu te moques de moi là j'espère ? Non mais, tu espères vraiment me faire croire que tu as complètement oublié et tu ne m'as même pas envoyé un message pour me prévenir ?"
+            #K "Jay... Je... Tu m'énerves ! Viens, sinon je vais finir par t'étriper avant même que tu rentres..."
+
+            #jump suite3
+        
+        #label moitie :
+            #J "Euh non, je crois qu'il fallait que je prenne un truc en plus, mais je ne me souviens plus quoi."
+            #K "Oh t'es lourd ! Je n'aais pas prévu que tu allais oublier de ramener les affaires de ce soir. Il va nous manquer de quoi passer la soirée !"
+            #K "Bon viens, sinon en plus d'etre con tu vas vraiment être en retard."
+
+            #jump suite3
+
+        #label tout :
+            #J "Ouais, j'ai pensé à ce que tu m'avais dit, normalement je n'ai rien oublié."
+            #K "Incroyable ! Je ne pensais pas que tu te souviendrais de tout. T'es vraiment parfait mon coeur."
+            #K "Bon, allons dans le salon, on était en train de jouer et... Ne t'inquiètes pas, j'ai une petite surprise pour toi après la soirée, une petite récompense..."
+            #E "Un clien d'oeil plus tard, Kim invite Jason à le suivre dans l'appartement où ils retrouvent Bryan et Anna autour d'une table de jeu dans le salon."
+
+        scene canape_kim
+
+
+        label suite3 :
+            ""
         
 
 
