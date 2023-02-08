@@ -67,7 +67,7 @@ label start:
     N "Hey hey hey, comment tu vas ?"
     J "Salut Nancy, ça va et toi ?"
     N "Ouais ça va, je voulais juste t'appeler parce que je sors de chez le psy, j'avais rendez-vous cet après-midi..."
-    J "Déjà ? Ton dernier rendez-vous était il y a à peine deux semaines, pourquoi voulait-il te revoir si vite ?"
+    J "Déjà ? Ton dernier rendez-vous était il y a à peine deux semaines, pourquoi est-ce qu'il te revoir aussi vite ?"
     N "Honnêtement je n'ai pas compris pourquoi mais mes parents ont insisté pour que je le voie alors que..."
     N "..."
     N "Ca fait je ne sais combien de mois maintenant, il faut qu'ils passent à autre chose."
