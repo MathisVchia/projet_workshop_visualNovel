@@ -19,6 +19,8 @@ define E = Character('', color= "#ffdabc", what_italic = True) # bruitage et env
 # Le jeu commence ici
 label start:
 
+
+
     # Mettre toutes les variables ici
     $ relationJtoK = 0
     $ relationJtoB = 0
@@ -37,7 +39,7 @@ label start:
     $ lifeA = 100
     $ lifeN = 100
 
-      
+    play music "audio/Music/Prologue1.mp3" loop
 
     J_think "Aujourd'hui, c'est le grand jour. Il ne me reste plus beaucoup de temps avant de devoir partir, et il ne faut pas que je gâche la soirée, sinon Kim ne me le pardonnera jamais."
     J_think " Depuis le temps qu'il s'embête à tout bien organiser, la moindre petite faute de goût pourrait me coûter très cher. Kim et moi, on se connait depuis quelques années maintenant, je sais comment il réagira. Surtout depuis la dispute d’hier."
@@ -172,19 +174,21 @@ label start:
         scene fenetre_kim
         with dissolve
 
-        E "Depuis l'extérieur, les feêntres de la maison de Kim semblent éclairées. au loin, quelques ombres dansent sur les murs du salon. La soirée a déjà commencé."
+        E "Depuis l'extérieur, les fenêtres de la maison de Kim semblent éclairées. au loin, quelques ombres dansent sur les murs du salon. La soirée a déjà commencé."
         J_think "Merde, je suis le dernier. J'espère que je n'ai pas raté grand chose."
 
-    
+        play sound "audio/Sounds/Carillon.mp3"
         E "Ding dong"
+        play music "audio/Music/Soiree1.mp3" loop fadeout 1
 
         scene entree_kim
         show kim_content:
             yalign -0.5
 
+
         K "Ah bah enfin te voilà ! T'es le dernier à arriver, on a cru que tu allais oublier la soirée !"
         J "Désolé, j'ai pris trop de temps sur le chemin, le bus a fait un détour."
-        K "Ne t'en vais pas va ! Alors, tu as pensé à ce que tu devais ramener ?"
+        K "Ne t'en fais pas va ! Alors, tu as pensé à ce que tu devais ramener ?"
 
         #if objet == 0 :
             #jump mainsvides
