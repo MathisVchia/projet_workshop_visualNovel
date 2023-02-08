@@ -308,7 +308,7 @@ label start:
                     jump choix_Bryan3
                 "Anna":
                     jump choix_Anna3
-                "Kim"
+                "Kim":
                     jump choix_Kim3
 
         label choix_Bryan3:
