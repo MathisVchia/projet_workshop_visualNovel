@@ -70,7 +70,7 @@ label start:
     J "Déjà ? Ton dernier rendez-vous était il y a à peine deux semaines, pourquoi voulait-il te revoir si vite ?"
     N "Honnêtement je n'ai pas compris pourquoi mais mes parents ont insisté pour que je le voie alors que..."
     N "..."
-    N "Ca fait je ne sais combien de mois maintenant, iel faut qu'ils passent à autre chose."
+    N "Ca fait je ne sais combien de mois maintenant, il faut qu'ils passent à autre chose."
 
     menu:
         "Lui conseiller de continuer son traitement ou de l'arrêter ?"
